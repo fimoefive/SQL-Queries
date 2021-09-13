@@ -77,4 +77,10 @@ order by Total desc --desc is for decending, asc is for accending orders
 
 -- artists and their longest track
 
+select *
+From Artist a
+
+select *
+From Track t join  Album a on a.AlbumId = t.AlbumId
+
 
