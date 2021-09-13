@@ -68,3 +68,13 @@ from InvoiceLine -- tracks on the invoice
 Select top 5 *
 from Invoice
 order by Total desc --desc is for decending, asc is for accending orders
+
+----------------- SUBQUERIES ----------------
+-------------------------------------------------------------------------------
+--nesting one or more queries inside another one
+-- subquery, and correlated subquery are the  two main categories
+
+
+-- artists and their longest track
+
+
