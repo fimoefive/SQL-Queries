@@ -79,8 +79,19 @@ order by Total desc --desc is for decending, asc is for accending orders
 
 select *
 From Artist a
+(select ArtistId, max(Milliseconds) LongestSongLength
+From Track t 
+	join  Album a 
+		on a.AlbumId = t.AlbumId
+group by ArtistId
+) maxSong
+on a.ArtistId = maxSong.ArtistId
 
-select *
-From Track t join  Album a on a.AlbumId = t.AlbumId
+select ArtistId, max(Milliseconds) LongestSongLength
+From Track t 
+	join  Album a 
+		on a.AlbumId = t.AlbumId
+group by ArtistId
+
 
 
