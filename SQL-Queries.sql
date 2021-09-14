@@ -154,6 +154,15 @@ where ArtistId not in (
 -- result =
 -- 1,2,3,4,5,6,7
 
+-- union of two select queries
+select left (Name, 1)
+from Artist
+union
+select left(FirstName, 1)
+from Customer
+
+
+
 -- must have the same number of columns, aliases only matter on the first set
 select Email, 'Employee' as [type]
 from Employee
