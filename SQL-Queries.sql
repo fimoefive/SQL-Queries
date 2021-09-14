@@ -123,7 +123,7 @@ where not exists (
 		where al.ArtistId = a.ArtistId
 )
 
--- regular subquery
+-- regular subquery for artist with no tracks
 select *
 from Artist a
 where ArtistId not in (
