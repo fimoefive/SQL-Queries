@@ -132,3 +132,14 @@ where ArtistId not in (
 			join Album al
 					on al.AlbumId = t.AlbumId
 )
+
+
+----------- UNION, EXCEPT, UNION ALL, INTERSECT ----------------
+----------------------------------------------------------------
+
+-- combining/comparing two or more resultsets that may or may not have anything in common
+
+-- 1,2,3,4,5,6,7,8,9,10
+-- union
+-- 8,9,10,11,12,13,14,15
+
