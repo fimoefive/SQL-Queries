@@ -181,7 +181,31 @@ select ArtistId
 from Album 
 
 -- intersect, gives the middle portion of the Venn Diagram
+select ArtistId
+from Artist a
+intersect
+select ArtistId
+from Album 
+
+-- intersect, show me the overlap of these two data sets
+
+-- union, give me the combination of these two intersects that are unique
+-- with no duplication
+
+-- union all, give me all of the results from both of data sets
+-- give me the combinations both tables with duplication
 
 
+-- except, give me all the results of the top unless 
+-- there is a match from the bottom
+select left(FirstName,1)
+from Employee
+except
+select left(FirstName,1)
+from Customer
 
-
+select left(FirstName,1)
+from Customer
+except
+select left(FirstName,1)
+from Employee
