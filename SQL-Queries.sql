@@ -139,7 +139,21 @@ where ArtistId not in (
 
 -- combining/comparing two or more resultsets that may or may not have anything in common
 
+-- Union
+
 -- 1,2,3,4,5,6,7,8,9,10
 -- union
 -- 8,9,10,11,12,13,14,15
+-- results =
+-- 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 union
+-- 1,2,3,4,5,6,7,8,9,10,8,9,10,11,12,13,14,15 union all
+
+-- Execpt
+-- 1,2,3,4,5,6,7,8,9,10
+-- except
+-- 8,9,10,11,12,13,14,15
+-- result =
+-- 1,2,3,4,5,6,7
+
+
 
