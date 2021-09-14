@@ -124,6 +124,7 @@ where not exists (
 )
 
 -- regular subquery for artist with no tracks
+-- where ArtistId is not AlbumId table
 select *
 from Artist a
 where ArtistId not in (
@@ -157,20 +158,29 @@ where ArtistId not in (
 -- union of two select queries
 select left (Name, 1)
 from Artist
-union
+union --all
 select left(FirstName, 1)
 from Customer
 
 
 
 -- must have the same number of columns, aliases only matter on the first set
+-- all of Customer and Employee email addresses
 select Email, 'Employee' as [type]
 from Employee
-union
+union all
 select Email, 'Customer'
 from Customer
 
---
+-- except operator
+-- number of artist that ArtistId is not in the Album table
+select ArtistId
+from Artist a
+except
+select ArtistId
+from Album 
+
+-- intersect, gives the middle portion of the Venn Diagram
 
 
 
