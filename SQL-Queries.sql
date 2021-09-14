@@ -124,4 +124,11 @@ where not exists (
 )
 
 -- regular subquery
-
+select *
+from Artist a
+where ArtistId not in (
+	select ArtistId
+	From track t
+			join Album al
+					on al.AlbumId = t.AlbumId
+)
