@@ -140,7 +140,6 @@ where ArtistId not in (
 -- combining/comparing two or more resultsets that may or may not have anything in common
 
 -- Union
-
 -- 1,2,3,4,5,6,7,8,9,10
 -- union
 -- 8,9,10,11,12,13,14,15
@@ -154,6 +153,16 @@ where ArtistId not in (
 -- 8,9,10,11,12,13,14,15
 -- result =
 -- 1,2,3,4,5,6,7
+
+-- must have the same number of columns, aliases only matter on the first set
+select Email, 'Employee' as [type]
+from Employee
+union
+select Email, 'Customer'
+from Customer
+
+--
+
 
 
 
