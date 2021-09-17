@@ -188,13 +188,30 @@ select ArtistId
 from Album 
 
 -- intersect, show me the overlap of these two data sets
+-- show me all of the shared letters of the FirstName of Employees & Customers
+select left(FirstName,1)
+from Employee
+intersect
+select left(FirstName,1)
+from Customer
 
 -- union, give me the combination of these two intersects that are unique
 -- with no duplication
+-- give me all of the results from both tables, but just the unique ones with no duplication
+select left(FirstName,1)
+from Employee
+union
+select left(FirstName,1)
+from Customer
 
 -- union all, give me all of the results from both of data sets
 -- give me the combinations both tables with duplication
-
+-- give me all of the results from both tables with duplication
+select left(FirstName,1)
+from Employee
+union all
+select left(FirstName,1)
+from Customer
 
 -- except, give me all the results of the top unless 
 -- there is a match from the bottom
